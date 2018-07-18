@@ -1,6 +1,5 @@
 package br.com.wellingtoncosta.databinding.playground.domain
 
-import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
@@ -9,8 +8,8 @@ import android.arch.persistence.room.PrimaryKey
  */
 @Entity(tableName = "contact")
 data class Contact(
-        @PrimaryKey(autoGenerate = true) var id: Int? = null,
-        @ColumnInfo var name: String = "",
-        @ColumnInfo var email: String = "",
-        @ColumnInfo var phone: String = ""
+        @PrimaryKey(autoGenerate = true) var id: Int,
+        var name: String,
+        var email: String,
+        var phone: String
 )
