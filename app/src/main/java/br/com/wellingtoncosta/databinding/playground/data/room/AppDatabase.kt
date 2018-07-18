@@ -7,7 +7,7 @@ import br.com.wellingtoncosta.databinding.playground.domain.Contact
 /**
  * @author WellingtonCosta on 18/07/18
  */
-@Database(entities = [Contact::class], version = AppDatabase.VERSION)
+@Database(entities = [Contact::class], version = AppDatabase.VERSION, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun contactDao(): ContactDao
