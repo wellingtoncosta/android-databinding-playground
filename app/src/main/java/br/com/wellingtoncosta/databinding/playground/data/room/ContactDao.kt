@@ -1,4 +1,4 @@
-package br.com.wellingtoncosta.databinding.playground.data
+package br.com.wellingtoncosta.databinding.playground.data.room
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
