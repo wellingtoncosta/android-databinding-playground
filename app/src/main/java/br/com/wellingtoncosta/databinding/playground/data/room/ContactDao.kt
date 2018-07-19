@@ -4,7 +4,7 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
 import br.com.wellingtoncosta.databinding.playground.domain.Contact
-import io.reactivex.Flowable
+import io.reactivex.Maybe
 
 /**
  * @author WellingtonCosta on 18/07/18
@@ -16,6 +16,6 @@ interface ContactDao {
     fun insert(contact: Contact)
 
     @Query("SELECT * FROM contact")
-    fun listAll(): Flowable<List<Contact>>
+    fun listAll(): Maybe<List<Contact>>
 
 }

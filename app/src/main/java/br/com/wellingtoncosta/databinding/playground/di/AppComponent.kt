@@ -2,8 +2,9 @@ package br.com.wellingtoncosta.databinding.playground.di
 
 import br.com.wellingtoncosta.databinding.playground.App
 import br.com.wellingtoncosta.databinding.playground.di.module.AppModule
-import br.com.wellingtoncosta.databinding.playground.di.module.RepositoryModule
-import br.com.wellingtoncosta.databinding.playground.di.module.RoomModule
+import br.com.wellingtoncosta.databinding.playground.di.module.data.RepositoryModule
+import br.com.wellingtoncosta.databinding.playground.di.module.data.RoomModule
+import br.com.wellingtoncosta.databinding.playground.di.module.ui.ActivityModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -15,6 +16,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
+    ActivityModule::class,
     AppModule::class,
     RoomModule::class,
     RepositoryModule::class

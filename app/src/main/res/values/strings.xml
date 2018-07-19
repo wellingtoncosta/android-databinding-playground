@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Contacts</string>
+    <string name="load_contacts_failure">Could not load contacts.</string>
 </resources>

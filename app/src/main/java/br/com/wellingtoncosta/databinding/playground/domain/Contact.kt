@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey
  */
 @Entity(tableName = "contact")
 data class Contact(
-        @PrimaryKey(autoGenerate = true) var id: Int,
+        @PrimaryKey(autoGenerate = true) var id: Int?,
         var name: String,
         var email: String,
         var phone: String

@@ -1,4 +1,4 @@
-package br.com.wellingtoncosta.databinding.playground.di.module
+package br.com.wellingtoncosta.databinding.playground.di.module.data
 
 import br.com.wellingtoncosta.databinding.playground.data.repository.ContactDataRepository
 import br.com.wellingtoncosta.databinding.playground.data.repository.ContactRepository

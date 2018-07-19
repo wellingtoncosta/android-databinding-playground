@@ -1,4 +1,4 @@
-package br.com.wellingtoncosta.databinding.playground.di.module
+package br.com.wellingtoncosta.databinding.playground.di.module.data
 
 import br.com.wellingtoncosta.databinding.playground.data.room.AppDatabase
 import dagger.Module
@@ -14,9 +14,13 @@ import android.content.Context
 @Module
 class RoomModule {
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideRoomDatabase(context: Context) =
             Room.databaseBuilder(context, AppDatabase::class.java, "app-db").build()
+
+    @Provides
+    @Singleton
+    fun provideContactDao(appDatabase: AppDatabase) = appDatabase.contactDao()
 
 }
