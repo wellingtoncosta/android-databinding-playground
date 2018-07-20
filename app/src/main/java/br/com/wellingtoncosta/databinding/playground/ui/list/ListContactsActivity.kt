@@ -6,7 +6,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import br.com.wellingtoncosta.databinding.playground.R
 import br.com.wellingtoncosta.databinding.playground.databinding.ActivityListContactsBinding
@@ -17,6 +17,7 @@ import br.com.wellingtoncosta.databinding.playground.ui.create.NewContactActivit
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
+import android.support.v7.widget.DividerItemDecoration
 
 /**
  * @author WellingtonCosta on 18/07/18
@@ -40,6 +41,8 @@ class ListContactsActivity : DaggerAppCompatActivity() {
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
 
+        setupRecyclerView()
+
         observeContacts()
         observeHasError()
         observeEvents()
@@ -55,13 +58,22 @@ class ListContactsActivity : DaggerAppCompatActivity() {
         RxBus.unregister(this)
     }
 
+    private fun setupRecyclerView() {
+        val recyclerView = binding.recyclerView
+        val layoutManager = LinearLayoutManager(this)
+        val divider = DividerItemDecoration(
+                recyclerView.context,
+                layoutManager.orientation
+        )
+
+        recyclerView.layoutManager = layoutManager
+        recyclerView.addItemDecoration(divider)
+    }
+
     private fun observeContacts() {
         viewModel.contacts.observe(this, Observer {
-            Log.d("contacts", it.toString())
             val contacts = it ?: emptyList()
-            val adapter = binding.recyclerView.adapter ?: ListContactsAdapter(contacts)
-            (adapter as ListContactsAdapter).contacts = contacts
-            adapter.notifyDataSetChanged()
+            binding.recyclerView.adapter = ListContactsAdapter(contacts)
         })
     }
 

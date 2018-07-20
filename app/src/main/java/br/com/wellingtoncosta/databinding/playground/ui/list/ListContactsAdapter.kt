@@ -22,6 +22,7 @@ class ListContactsAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val binding = (holder as ListContactsViewHolder).binding
         binding?.contact = contacts[position]
+        binding?.executePendingBindings()
     }
 
     override fun getItemCount() = contacts.size
