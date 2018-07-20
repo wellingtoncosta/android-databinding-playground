@@ -83,7 +83,7 @@ class ListContactsActivity : DaggerAppCompatActivity() {
             if(hasError) {
                 Toast.makeText(
                         this,
-                        R.string.load_contacts_failure,
+                        R.string.load_failure,
                         Toast.LENGTH_SHORT
                 ).show()
             }

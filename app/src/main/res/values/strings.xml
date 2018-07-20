@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Contacts</string>
-    <string name="load_contacts_failure">Could not load contacts.</string>
+    <string name="create_new_contact">Create New</string>
+    <string name="email">E-mail</string>
+    <string name="field_required">Field required</string>
+    <string name="invalid_email">Invalid e-mail</string>
+    <string name="load_failure">Could not load contacts.</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="save">Save</string>
+    <string name="save_failure">Could not save contact</string>
 </resources>

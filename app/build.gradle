@@ -39,6 +39,9 @@ dependencies {
 
     implementation 'com.github.WellingtonCosta:viewmodel-dagger:1.0'
 
+    implementation "com.github.WellingtonCosta.convalida:convalida:$convalida_version"
+    kapt "com.github.WellingtonCosta.convalida:convalida-compiler:$convalida_version"
+
     // Android Databinding
     kapt 'com.android.databinding:compiler:3.1.3'
 
